@@ -1,1 +1,20 @@
-["tweet.coffee", "shipit.coffee", "gif-me.coffee"]
+[
+  "applause.coffee",
+  "cheer.coffee",
+  "gif-me.coffee",
+  "github-commit-link.coffee",
+  "github-committers.coffee",
+  "github-issue-link.coffee",
+  "github-issues.coffee",
+  "github-pulls.coffee",
+  "github-status.coffee",
+  "google.coffee",
+  "graphite.coffee",
+  "homer.coffee",
+  "insult.coffee",
+  "isup.coffee",
+  "newrelic.coffee",
+  "shipit.coffee",
+  "travis.coffee",
+  "tweet.coffee"
+]

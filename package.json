@@ -23,7 +23,11 @@
     "hubot": "2.4.7",
     "hubot-scripts": "2.4.1",
     "optparse": "1.0.3",
-    "hubot-hipchat": ">= 2.4.5"
+    "hubot-hipchat": ">= 2.4.5",
+    "date-utils": ">= 1.2.5",
+    "githubot": "0.2.0",
+    "gitio": "1.0.1",
+    "cheerio": "0.7.0"
   }
 }
 

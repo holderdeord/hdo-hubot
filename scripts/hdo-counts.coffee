@@ -13,7 +13,6 @@
 
 module.exports = (robot) ->
   robot.respond /(?:hvor mange )?dager til (valget|kampanj(e|en|estart)|rfa)/i, (msg) ->
-    console.log(msg.match)
     match = msg.match[1]
 
     if match == "valget"

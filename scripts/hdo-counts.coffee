@@ -12,12 +12,13 @@
 #   jarib
 
 module.exports = (robot) ->
-  robot.respond /(?:hvor mange )? dager til (valget|kampanjen|kampanjestart|rfa)/i, (msg) ->
+  robot.respond /(?:hvor mange )?dager til (valget|kampanj(e|en|estart)|rfa)/i, (msg) ->
+    console.log(msg.match)
     match = msg.match[1]
 
     if match == "valget"
       msg.send distanceUntil(process.env.HDO_ELECTION_DATE) + " til Valg 2013!"
-    else if match in ["kampanjen", "kampanjestart"]
+    else
       msg.send distanceUntil(process.env.HDO_CAMPAIGN_DATE) + " til RfA!"
 
   distanceUntil = (end) ->

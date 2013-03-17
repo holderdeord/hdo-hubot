@@ -1,1 +1,1 @@
-web: bin/hubot --adapter hipchat -n hubot
+web: bin/hubot --adapter hipchat -n sverdrup

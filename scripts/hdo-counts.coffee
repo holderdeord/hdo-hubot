@@ -12,7 +12,7 @@
 #   jarib
 
 module.exports = (robot) ->
-  robot.respond /(?:hvor mange )?dager til (valget|kampanj(e|en|estart)|rfa)/i, (msg) ->
+  robot.respond /(?:hvor mange )?dager (?:er det )?til (valget|kampanj(e|en|estart)|rfa)/i, (msg) ->
     match = msg.match[1]
 
     if match == "valget"

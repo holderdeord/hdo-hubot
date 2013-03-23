@@ -1,7 +1,6 @@
 [
   "applause.coffee",
   "cheer.coffee",
-  "gif-me.coffee",
   "github-commit-link.coffee",
   "github-issue-link.coffee",
   "github-issues.coffee",

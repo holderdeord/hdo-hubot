@@ -10,14 +10,30 @@ mornings = [
     "Morn %"
 ]
 
+evenings = [
+  "God kveld, %",
+  "God aften, %"
+]
+
+nights = [
+  "God natt, %",
+  "Natta %!"
+]
+
 module.exports = (robot) ->
-  robot.hear /(hallo|hei|god (dag|ettermiddag|kveld)|<3)/i, (msg) ->
-    if msg.message.text.indexOf(robot.name) != -1
-      hello = msg.random hellos
-      msg.send hello.replace "%", msg.message.user.name
+  robot.hear /(hallo|hei|god (dag|ettermiddag))/i, (msg) ->
+    respondFrom(msg, hellos)
 
   robot.hear /god morgen|morn/i, (msg) ->
-    if msg.message.text.indexOf(robot.name) != -1
-      hello = msg.random mornings
-      msg.send hello.replace "%", msg.message.user.name
+    respondFrom(msg, mornings)
 
+  robot.hear /god (aften|kveld)/i, (msg) ->
+    respondFrom(msg, evenings)
+
+  robot.hear /god natt|natta/i, (msg) ->
+    respondFrom(msg, nights)
+
+  respondFrom = (msg, list) ->
+    if msg.message.text.indexOf(robot.name) != -1
+      hello = msg.random list
+      msg.send hello.replace "%", msg.message.user.name

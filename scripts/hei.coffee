@@ -33,6 +33,9 @@ module.exports = (robot) ->
   robot.hear /god natt|natta/i, (msg) ->
     respondFrom(msg, nights)
 
+  robot.hear /form(en)?, @?sverdrup/i, (msg) ->
+    msg.send "Storform"
+
   respondFrom = (msg, list) ->
     if msg.message.text.indexOf(robot.name) != -1
       hello = msg.random list

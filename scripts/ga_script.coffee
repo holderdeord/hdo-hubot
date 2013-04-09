@@ -12,14 +12,14 @@ util = require('util')
 
 
 module.exports = (robot) ->
-  robot.respond /besøk/i, (msg) ->
+  robot.respond /ga (visits|pageviews)/i, (msg) ->
     config = {
       "user": process.env.ANALYTICS_USER,
       "password": process.env.ANALYTICS_PASSWORD
     }
 
     dimensions = ['ga:date']
-    metrics = ['ga:visits']
+    metrics = ['ga:' + msg.match[1]]
     gac = new ga.GA(config)
 
     url = "http://beta.holderdeord.no"
@@ -41,7 +41,7 @@ module.exports = (robot) ->
 
       gac.get(options, (err, entries) ->
         if !err
-          msg.send "holderdeord.no fikk #{entries[0].metrics[0]['ga:visits']} besøk i går og #{entries[1].metrics[0]['ga:visits']} i dag."
+          msg.send "holderdeord.no got #{entries[0].metrics[0]['ga:' + msg.match[1]]} #{msg.match[1]} yesterday and #{entries[1].metrics[0]['ga:' + msg.match[1]]} today."
         else
           console.log err
       )

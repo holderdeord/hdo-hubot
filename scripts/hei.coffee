@@ -33,7 +33,7 @@ module.exports = (robot) ->
   robot.hear /god natt|natta/i, (msg) ->
     respondFrom(msg, nights)
 
-  robot.hear /form(en)?, @?sverdrup/i, (msg) ->
+  robot.hear /form(en)?,? @?sverdrup/i, (msg) ->
     msg.send "Storform"
 
   respondFrom = (msg, list) ->

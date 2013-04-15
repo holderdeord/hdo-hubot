@@ -1,13 +1,13 @@
 hellos = [
-    "Hei %",
-    "God dag, %!",
+  "Hei %",
+  "God dag, %!",
 ]
 
 mornings = [
-    "God morgen %",
-    "God morgen til deg også, %",
-    "God dag, %",
-    "Morn %"
+  "God morgen %",
+  "God morgen til deg også, %",
+  "God dag, %",
+  "Morn %"
 ]
 
 evenings = [
@@ -20,7 +20,14 @@ nights = [
   "Natta %!"
 ]
 
+hip = [
+  'Yo, %',
+  'Zup, %'
+]
+
 module.exports = (robot) ->
+  winkUsers = (process.env.HDO_WINK_USERS || '').split(',');
+
   robot.hear /(hallo|hei|god (dag|ettermiddag))/i, (msg) ->
     respondFrom(msg, hellos)
 
@@ -36,7 +43,15 @@ module.exports = (robot) ->
   robot.hear /form(en)?,? @?sverdrup/i, (msg) ->
     msg.send "Storform"
 
+  robot.hear /zup|sup|wassup|yo/i, (msg) ->
+    respondFrom(msg, hip)
+
   respondFrom = (msg, list) ->
     if msg.message.text.indexOf(robot.name) != -1
       hello = msg.random list
-      msg.send hello.replace "%", msg.message.user.name
+      reply = hello.replace "%", msg.message.user.name
+
+      if winkUsers.indexOf(msg.message.user.name) != -1
+        reply = "#{reply} ;)"
+
+      msg.send reply

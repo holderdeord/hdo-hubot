@@ -54,4 +54,7 @@ module.exports = (robot) ->
       if winkUsers.indexOf(msg.message.user.name) != -1
         reply = "#{reply} ;)"
 
+      if msg.message.text.indexOf('<3') != -1
+        reply = "#{reply} <3"
+
       msg.send reply

@@ -3,7 +3,6 @@
 #
 # Configuration:
 #   HDO_ELECTION_DATE
-#   HDO_CAMPAIGN_DATE
 #
 # Commands:
 #   hubot hvor mange dager til valget
@@ -12,13 +11,8 @@
 #   jarib
 
 module.exports = (robot) ->
-  robot.respond /(?:hvor mange )?dager (?:er det )?til (valget|kampanj(e|en|estart)|rfa)/i, (msg) ->
-    match = msg.match[1]
-
-    if match == "valget"
-      msg.send distanceUntil(process.env.HDO_ELECTION_DATE) + " til Valg 2013!"
-    else
-      msg.send distanceUntil(process.env.HDO_CAMPAIGN_DATE) + " til RfA!"
+  robot.respond /(?:hvor mange )?dager (?:er det )?til valget/i, (msg) ->
+    msg.send distanceUntil(process.env.HDO_ELECTION_DATE) + " til Valg 2017!"
 
   distanceUntil = (end) ->
     sec = 1000

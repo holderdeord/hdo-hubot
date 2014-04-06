@@ -10,8 +10,6 @@
   "graphite.coffee",
   "insult.coffee",
   "isup.coffee",
-  "newrelic.coffee",
   "shipit.coffee",
-  "travis.coffee",
-  "tweet.coffee"
+  "travis.coffee"
 ]

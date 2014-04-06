@@ -1,8 +1,8 @@
 {
-  "name":        "hosted-hubot",
-  "version":     "2.4.7",
-  "author":      "GitHub Inc.",
-  "keywords":    "github hubot campfire bot",
+  "name":        "hdo-hubot",
+  "version":     "1.0.0",
+  "author":      "Holder de ord",
+  "keywords":    "hdo hubot hipchat bot",
   "description": "A simple helpful Robot for your Company",
   "licenses":     [{
     "type":       "MIT",
@@ -16,12 +16,12 @@
 
   "repository" : {
     "type" : "git",
-    "url" : "http://github.com/github/hubot.git"
+    "url" : "http://github.com/holderdeord/hdo-hubot.git"
   },
 
   "dependencies": {
-    "hubot": "2.7.1",
-    "hubot-scripts": "2.4.2",
+    "hubot": "2.7.2",
+    "hubot-scripts": "2.5.11",
     "optparse": "1.0.3",
     "hubot-hipchat": ">= 2.6.4",
     "date-utils": ">= 1.2.15",
